@@ -1,12 +1,12 @@
 {% extends "base.html" %}
-
 {% load static %}
-
 {% block content %}
-  <h1>Hello, {{title}}</h1>
+
   {% if request.user.is_authenticated %}
     {{premium_content}}
   {% endif %}
-  <img src="{% static 'img/linkedin.png' %}" alt="" srcset="">
+  <div class="container">
+    <img class="img-fluid" src="{% static 'img/linkedin.png' %}" alt="" srcset="">
+  </div>
 
 {% endblock content %}

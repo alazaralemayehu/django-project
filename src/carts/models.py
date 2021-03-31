@@ -19,7 +19,7 @@ class CartManager(models.Manager):
 class Cart(models.Model):
     user        = models.ForeignKey(User, null=True, blank=True)
     products    = models.ManyToManyField(Product, blank=True)
-    total       = models.DecimalField(default=0.00, max_digits=100, decimal_places=2)
+    total       = models.DecimalField(default=0.00, max_digits=20, decimal_places=2)
     updated     = models.DateTimeField(auto_now=True)
     timestamp   = models.DateTimeField(auto_now_add=True)
 
