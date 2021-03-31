@@ -31,7 +31,7 @@ class RegisterForm(forms.Form):
   username = forms.CharField(widget=forms.TextInput(attrs=attributes))
   email = forms.EmailField(widget=forms.EmailInput(attrs=attributes))
   password = forms.CharField(widget=forms.PasswordInput(attrs=attributes))
-  password2 = forms.CharField(label="confirm password", widget=forms.PasswordInput(attrs=attributes))
+  # password2 = forms.CharField(label="confirm password", widget=forms.PasswordInput(attrs=attributes))
 
   def clean_username(self):
     user = get_user_model()
@@ -53,9 +53,10 @@ class RegisterForm(forms.Form):
 
     return email
 
-  def clean_password(self):
-    password = self.cleaned_data.get('password')
-    password2 = self.cleaned_data.get('password2')
-    if password != password2:
-      raise forms.ValidationError("Password Must match")
-    return password
+  # def clean_password(self):
+  #   password = self.cleaned_data.get('password')
+  #   password2 = self.cleaned_data.get('password2')
+  #   print(self.cleaned_data, password)
+  #   if password != password2:
+  #     raise forms.ValidationError("Password Must match")
+  #   return password

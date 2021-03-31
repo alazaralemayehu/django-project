@@ -39,8 +39,6 @@ def login_page(request):
     username = login_form.cleaned_data.get('username')
     password = login_form.cleaned_data.get('password')
     user = authenticate(request, username=username, password=password)
-    print(user)
-    print(request.user.is_authenticated())
     if user is not None:
       login(request, user)
       print(request.user.is_authenticated())
@@ -61,9 +59,11 @@ def register_page(request):
     username = cleaned_data.get('username')
     email = cleaned_data.get('email')
     password = cleaned_data.get('password')
+    # password2 = cleaned_data.get('password2')
 
     new_user = user.objects.create_user(username, email, password)
-  
+
+    return render (request,'home_page.html',context)
     print(new_user)
 
   return render (request,'auth/register.html',context)

@@ -17,9 +17,8 @@ Including another URLconf
 
 from django.conf.urls import url
 from django.contrib import admin
-from .views import ProductListView, product_list_view, ProductDetailView, product_detail_view
-
+from .views import cart_home, cart_update
 urlpatterns = [
-    url(r'^$', ProductListView.as_view(), name= 'list'),
-    url(r'^(?P<pk>\d+)/$', ProductDetailView.as_view(), name= 'detail'),
-    ]
+    url(r'^$', cart_home, name= 'home'),
+    url(r'^update/$', cart_update, name= 'update'),
+  ]

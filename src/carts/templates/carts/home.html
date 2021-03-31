@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+  <h1>Carts</h1>
+  {% if cart.products.exists %}
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Product Name</th>
+        <th scope="col">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for product in cart.products.all %}
+      <tr>
+        <th scope="row">{{forloop.counter}}</th>
+        <td>{{ product.title}}</td>
+        <td>{{ product.price}}</td>
+      </tr>
+  {% endfor %}
+    <tr>
+      <th scope="row" colspan="2"></th>
+      <td>Total {{ cart.total }}</td>
+    </tr>
+    </tbody>
+  </table>  
+
+  {% else %}
+    <p>Cart is Empty</p>
+  {% endif %}
+</div>
+{% endblock %}

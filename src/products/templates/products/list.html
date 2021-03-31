@@ -1,8 +1,13 @@
 {% extends "base.html" %}
 
+
 {% block content%}
-  <div class="container">
-    <div class="row">
+<div class="container">
+  <div class="row">
+{% include 'search/snippets/search-form.html'%}
+  </div>
+  <br/>
+  <div class="row">
     {% for product in object_list%}
       <div class="col">
         {% include 'products/snippets/card.html' with product=product%}

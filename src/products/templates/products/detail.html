@@ -4,14 +4,22 @@
   <div class="row">
     <div class="col">
       <h1>
-        {{object.title}}
+        {{object.title}} 
+  
       </h1>
+      <div class="col" style="width: -20px;">
+      </div>
       added {{product.timestamp|timesince}} ago
       <p>
         {{object.description|linebreaks}}
       </p>
-      <img src="{{ object.image.url }}" alt="" class="img-fluid">
+      <img width="200" height="200" src="{{ object.image.url }}" alt="" class="img-fluid">
     </div>
+  </div>
+  <br/>
+  {% include 'products/snippets/add-to-cart.html' with product=product cart=cart %}
+  <div class="row">
+
   </div>
 </div>
 
