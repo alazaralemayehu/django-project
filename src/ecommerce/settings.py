@@ -84,14 +84,14 @@ DATABASES = {
     #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     # }
 
-    'mysql': {
+    'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'my-app-db',
         'USER': 'mysql',
         'PASSWORD': 'password',
         'HOST': 'db',
         'PORT': 3306,
-    },
+    }
 }
 
 
