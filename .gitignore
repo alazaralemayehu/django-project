@@ -1,0 +1,10 @@
+# created by virtualenv automatically
+.DS_Store
+pyvenv.cfg
+# Django #
+*.log
+*.pot
+*.pyc
+__pycache__
+bin/*
+lib/*

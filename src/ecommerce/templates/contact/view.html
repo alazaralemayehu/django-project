@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content%}
+    <div class='container'>
+      <h1>Hello, {{ title }}</h1>
+
+        <div class="row">
+          <p>Welcome to contact page</p>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-12">
+            <form action="" method="POST">  
+              {% csrf_token%}
+              {{ form }}
+              <input class="form-control" type="submit"/>
+            </form>
+          </div>
+        </div>
+        
+    </div>
+{% endblock %} 

@@ -1,0 +1,14 @@
+
+
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{{ product.image.url}}" alt="Card image cap">
+  <div class="card-body">
+    <h3 class="card-title">{{ product.title }}</h3>
+    <p>added {{product.timestamp|timesince}} ago</p>
+    <p class="card-text">{{ product.description }}</p>
+    ${{ product.price }} <a href="{{ product.get_absolute_url}}" class="btn btn-primary">Detail</a>
+    <a href="{% url 'products:detail' pk=product.pk  %}" class="btn btn-default">Add to Card</a>
+  </div>
+</div>
+
+

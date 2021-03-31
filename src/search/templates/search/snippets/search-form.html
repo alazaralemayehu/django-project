@@ -1,0 +1,47 @@
+<div class="row">
+  <div class="col-12">
+    <form action="{% url 'search:query' %} ">
+      <div class="row">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="name" name='q'>
+        </div>
+        <div class="col">
+          <label for="name-sort">Sort By Name</label>
+          <input type="checkbox" name="name-sort" id="name-sort">
+        </div>
+
+        <div class="col">
+          <label for="name-price">Sort By Price</label>
+          <input type="checkbox" name="price-sort" id="name-price">
+        </div>
+
+        <div class="col">
+          <input type="submit" class="form-control btn btn-success" value="search">
+        </div>
+      </div>
+    </form>
+    
+  </div>
+<!-- 
+  <div class="col-3">
+    <form>
+      <div class="row">
+        <div class="col">
+          <input type="submit" class="form-control btn btn-success" value="Sort By Name">
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="col-3">
+    <form>
+      <div class="row">
+        <div class="col">
+          <input type="submit" class="form-control btn btn-success" value="Sort By Price">
+        </div>
+      </div>
+    </form>
+  </div>
+   -->
+</div>
+
