@@ -1,7 +1,11 @@
 
-
+{% load static %}
 <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="{{ product.image.url}}" alt="Card image cap">
+  {% if product.image %}
+    <img class="card-img-top" src="{{ product.image.url}}" alt="Card image cap">
+  {% else %}
+    <img class="card-img-top"  src="{% static 'img/twitch.jpg' %}" alt="Card image cap">
+  {% endif %}
   <div class="card-body">
     <h3 class="card-title">{{ product.title }}</h3>
     <p>added {{product.timestamp|timesince}} ago</p>
