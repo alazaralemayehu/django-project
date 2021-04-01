@@ -2,11 +2,47 @@
 {% load static %}
 {% block content %}
 
-  {% if request.user.is_authenticated %}
-    {{premium_content}}
-  {% endif %}
   <div class="container">
-    <img class="img-fluid" src="{% static 'img/linkedin.png' %}" alt="" srcset="">
+    <div class="row text-center">
+      <h3 class="text-success">Django Web shop</h3>
+    </div>
+
+    <div class="row">
+      <div class="card mb-3">
+        <img
+          src="{% static 'img/twitch.jpg' %}"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">Are you sure you don't want this?</h5>
+          <p class="card-text">
+            Don't lose the chance to buy this phone.
+          </p>
+          <p class="card-text">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">
+            If all the shops closes, we will serve you.
+          </p>
+          <p class="card-text">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </p>
+        </div>
+        <img
+          src="{% static 'img/shop.jpg' %}"
+          class="card-img-bottom"
+          alt="..."
+        />
+      </div>
+    </div>
   </div>
+
+ 
 
 {% endblock content %}

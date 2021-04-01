@@ -17,7 +17,7 @@ Including another URLconf
 
 from django.conf.urls import url
 from django.contrib import admin
-from .views import ProductListView, product_list_view, ProductDetailView, product_detail_view
+from .views import ProductListView, ProductDetailView
 
 urlpatterns = [
     url(r'^$', ProductListView.as_view(), name= 'list'),

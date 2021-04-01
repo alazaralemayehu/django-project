@@ -16,38 +16,18 @@ class ProductListView(ListView):
     context['cart'] = cart_obj
     print(cart_obj)
     return context
-   
-
-def product_list_view(request):
-  queryset = Product.objects.all()
-  context = {
-    'object_list': queryset
-  }
-  return render (request, "products/list.html", context) 
-
+# 
+# This class is used to show the details of each product 
+# It inherits the built-in DetailView classes
 class ProductDetailView(DetailView):
-  print("hello world")
+  # Get all products
   queryset = Product.objects.all()
   template_name = "products/detail.html"
 
   def get_context_data(self, *args, **kwargs):
     cart_obj = get_cart(self.request)
     context = super(ProductDetailView,self).get_context_data(*args, **kwargs)
+    # Pass the cart the products in to the context
+    # so that it can be used if user is not authenticated during adding to cart
     context['cart'] = cart_obj
     return context
-   
-
-def product_detail_view(request, pk=None, *args, **kwargs):
-  # instance = Product.objects.get(pk=pk)
-  instance = Product.objects.get_by_id(pk)
-  if instance is None:
-    raise Http404("Product does not exist")
-  instance = get_object_or_404(Product, pk=pk)
-  queryset = Product.objects.all()
-  context = {
-    'object': instance
-  }
-  print(queryset)
-  return render (request, "products/detail.html", context) 
-
-
