@@ -1,4 +1,4 @@
-*** Description ***
+** Description **
 This is simple django trial project. 
 
 **Installation steps**
