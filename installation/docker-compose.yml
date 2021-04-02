@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+    db:
+      image: mysql:5.7
+      volumes: 
+        - ./db:/var/lib/mysql
+      restart: always
+      ports:
+        - '3306:3306'
+      environment:
+          MYSQL_DATABASE: 'my-app-db'
+          MYSQL_USER: 'mysql'
+          MYSQL_PASSWORD: 'password'
+          MYSQL_ROOT_PASSWORD: 'password'
+      expose: 
+        - "3306"
+    web:
+      build: .
+      command: sh -c 
+                "python manage.py migrate && 
+                echo \"from django.contrib.auth.models import User; User.objects.create_superuser('alazar', 'admin@example.com', 'pass')\" | python manage.py shell &&
+                python manage.py runserver 0.0.0.0:8000"
+     
+      
+      restart: on-failure
+      ports:
+        - '8000:8000'
+      depends_on:
+        - db
+      links:
+        - db:db
